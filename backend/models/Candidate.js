@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 
-const candidateSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  department: { type: String, required: true },
-  votes: { type: Number, default: 0 },
-  number: { type: Number, unique: true },
+const CandidateSchema = new mongoose.Schema({
+    name: String,
+    department: String,
+    year: String,
+    votes: { type: Number, default: 0 }
 });
 
-const Candidate = mongoose.model('Candidate', candidateSchema);
-module.exports = Candidate;
+module.exports = mongoose.model('Candidate', CandidateSchema);
